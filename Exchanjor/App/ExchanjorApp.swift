@@ -25,7 +25,7 @@ struct ExchanjorApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomePageView()
         }
         .modelContainer(sharedModelContainer)
     }
