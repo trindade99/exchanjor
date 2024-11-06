@@ -12,7 +12,7 @@ class APIService {
     
     func fetchCoinLayerData() async throws -> Data {
         // Define the URL with the access key
-        let accessKey = "42f98a988cc3a7331f5ab14037ad6f8d"
+        guard let accessKey = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as? String else { throw URLError(.unknown) }
         guard let url = URL(string: "http://api.coinlayer.com/live?access_key=\(accessKey)") else {
             throw URLError(.badURL)
         }

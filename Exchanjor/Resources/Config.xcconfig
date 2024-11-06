@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  Exchanjor
+//
+//  Created by Victor Lopes on 11/6/24.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+API_KEY="42f98a988cc3a7331f5ab14037ad6f8d"
