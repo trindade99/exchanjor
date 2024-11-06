@@ -21,6 +21,10 @@
 		223BEC182CDA8F6A001A34FC /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BEC172CDA8F6A001A34FC /* FavouritesView.swift */; };
 		223BEC1B2CDA9913001A34FC /* CapsuleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BEC1A2CDA9913001A34FC /* CapsuleViewCell.swift */; };
 		223BEC1D2CDA9F4D001A34FC /* ChartViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BEC1C2CDA9F4D001A34FC /* ChartViewCell.swift */; };
+		223BEC1F2CDAE0C0001A34FC /* CurrencyratesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BEC1E2CDAE0BA001A34FC /* CurrencyratesResponseModel.swift */; };
+		223BEC212CDAE20F001A34FC /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BEC202CDAE20F001A34FC /* MockData.swift */; };
+		2291CE792CDBE178005455A1 /* CapsuleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2291CE782CDBE176005455A1 /* CapsuleViewModel.swift */; };
+		22AE1A2C2CDB7DFD00BD1816 /* AppDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE1A2B2CDB7DF900BD1816 /* AppDefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,11 @@
 		223BEC172CDA8F6A001A34FC /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
 		223BEC1A2CDA9913001A34FC /* CapsuleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleViewCell.swift; sourceTree = "<group>"; };
 		223BEC1C2CDA9F4D001A34FC /* ChartViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewCell.swift; sourceTree = "<group>"; };
+		223BEC1E2CDAE0BA001A34FC /* CurrencyratesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyratesResponseModel.swift; sourceTree = "<group>"; };
+		223BEC202CDAE20F001A34FC /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		2291CE762CDBD958005455A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2291CE782CDBE176005455A1 /* CapsuleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleViewModel.swift; sourceTree = "<group>"; };
+		22AE1A2B2CDB7DF900BD1816 /* AppDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +117,7 @@
 		223BEBDB2CDA84BD001A34FC /* Exchanjor */ = {
 			isa = PBXGroup;
 			children = (
+				2291CE762CDBD958005455A1 /* Info.plist */,
 				223BEC0E2CDA8A18001A34FC /* App */,
 				223BEC0B2CDA8920001A34FC /* Views */,
 				223BEC0A2CDA891A001A34FC /* ViewModels */,
@@ -148,6 +158,8 @@
 		223BEC082CDA88FD001A34FC /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				22AE1A2B2CDB7DF900BD1816 /* AppDefaults.swift */,
+				223BEC202CDAE20F001A34FC /* MockData.swift */,
 				223BEC0F2CDA8A79001A34FC /* APIService.swift */,
 			);
 			path = Services;
@@ -156,6 +168,7 @@
 		223BEC092CDA890C001A34FC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				223BEC1E2CDAE0BA001A34FC /* CurrencyratesResponseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,6 +176,7 @@
 		223BEC0A2CDA891A001A34FC /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				2291CE772CDBE170005455A1 /* CellViewModel */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -226,6 +240,14 @@
 				223BEC1C2CDA9F4D001A34FC /* ChartViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		2291CE772CDBE170005455A1 /* CellViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2291CE782CDBE176005455A1 /* CapsuleViewModel.swift */,
+			);
+			path = CellViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,10 +382,14 @@
 			files = (
 				223BEC1B2CDA9913001A34FC /* CapsuleViewCell.swift in Sources */,
 				223BEBDF2CDA84BD001A34FC /* ContentView.swift in Sources */,
+				2291CE792CDBE178005455A1 /* CapsuleViewModel.swift in Sources */,
 				223BEC142CDA8CAA001A34FC /* Extensions.swift in Sources */,
 				223BEBE12CDA84BD001A34FC /* Item.swift in Sources */,
+				223BEC1F2CDAE0C0001A34FC /* CurrencyratesResponseModel.swift in Sources */,
+				22AE1A2C2CDB7DFD00BD1816 /* AppDefaults.swift in Sources */,
 				223BEC102CDA8A7D001A34FC /* APIService.swift in Sources */,
 				223BEBDD2CDA84BD001A34FC /* ExchanjorApp.swift in Sources */,
+				223BEC212CDAE20F001A34FC /* MockData.swift in Sources */,
 				223BEC182CDA8F6A001A34FC /* FavouritesView.swift in Sources */,
 				223BEC1D2CDA9F4D001A34FC /* ChartViewCell.swift in Sources */,
 				223BEC122CDA8AD5001A34FC /* HomePageView.swift in Sources */,
@@ -533,6 +559,7 @@
 				DEVELOPMENT_TEAM = Y69K77HXA2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Exchanjor/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -562,6 +589,7 @@
 				DEVELOPMENT_TEAM = Y69K77HXA2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Exchanjor/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

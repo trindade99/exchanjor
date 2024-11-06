@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct FavouritesView: View {
-    let data = [1, 5, 20, 4, 33, 7, 2, 12, 5, 30, 45, 2, 3, 4, 8]
+    @ObservedObject var appDefaults: AppDefaults
+    @Binding var selectedRateBinding: String
+    
     var body: some View {
-        // we're using GeometryReader size to keep the app fully responsive
+        // Using GeometryReader size to keep the app fully responsive
         GeometryReader { geometry in
             VStack(alignment: .leading) {
-                Text("Favourites")
+                Text("Favourites:")
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
@@ -21,27 +23,24 @@ struct FavouritesView: View {
                     .minimumScaleFactor(0.5)
                     .frame(maxWidth: geometry.size.width, alignment: .leading)
                     .padding(.leading, 10)
-                    .contentMargins(10)
+                
                 ScrollView {
-                    ForEach(Array(data.enumerated()), id: \.offset) {_ in
-                        CapsuleViewCell()
-                            .frame(width: geometry.size.width, height: geometry.size.height/7)
+                    ForEach(Array(appDefaults.favouriteRates.keys.enumerated()), id: \.element) { index, key in
+                        if let value = appDefaults.favouriteRates[key] {
+                            CapsuleViewCell(viewModel: .init(value: value, tag: key, longTouchAction: {
+                                appDefaults.favouriteRates.removeValue(forKey: key)
+                                appDefaults.updateFavouriteRates()
+                            }, isFavourite: true, rate: appDefaults.ratesUpdates, selectedRateBinding: $selectedRateBinding))
+                            .frame(width: geometry.size.width - 20, height: geometry.size.height * 0.125)
                             .padding(.horizontal, 10)
-                            .contentMargins(10)
-                            .padding(.vertical, 10)
+                            .padding(.vertical, 5)
+                        }
                     }
                 }
                 .padding(.horizontal, 5)
                 .scrollIndicators(.hidden)
             }
+            .padding(.top, 10) // To add some top padding for the title
         }
-    }
-}
-
-#Preview {
-    ZStack {
-        Color(.black)
-        FavouritesView()
-            .frame(width: 100)
     }
 }

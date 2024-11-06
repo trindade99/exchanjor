@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct HomePageView: View {
-    let data = [1, 5, 20, 4, 33, 7, 2, 12, 5, 30, 45, 2, 3, 4, 8]
+    @ObservedObject var appDefaults: AppDefaults
+    @State var selectedRate: String = AppDefaults.shared.savedRates.rates.first?.key ?? ""
+    var isExpanded: Bool {
+        !appDefaults.favouriteRates.isEmpty
+    }
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .topLeading) {
@@ -19,33 +24,38 @@ struct HomePageView: View {
                 )
                 .ignoresSafeArea()
                 .zIndex(-1)
-                HStack(alignment: .top, content: {
-                    FavouritesView()
-                        .frame(width: geometry.size.width * 0.3, height: geometry.size.height, alignment: .leading)
-                        .padding(.trailing, 20)
+                HStack(alignment: .top) {
+                    if isExpanded {
+                        FavouritesView(appDefaults: appDefaults, selectedRateBinding: $selectedRate)
+                            .frame(width: geometry.size.width * 0.3, height: geometry.size.height)
+                            .transition(.move(edge: .leading))
+                            .zIndex(1)
+                    }
+                    
                     VStack(alignment: .leading) {
-                        ChartViewCell()
-                            .frame(width: geometry.size.width * 0.6 ,height: geometry.size.height * 0.3, alignment: .top)
-                            .padding(15)
-                        ScrollView{
-                            ForEach(Array(data.enumerated()), id: \.offset) {_ in
-                                CapsuleViewCell()
-                                    .frame(width: geometry.size.width * 0.55, height: geometry.size.height/7)
-                                    .padding(.horizontal, 10)
-                                    .contentMargins(10)
-                                    .padding(.vertical, 10)
+                        ChartViewCell(selectedRate: $selectedRate)
+                            .frame(height: geometry.size.height * 0.3, alignment: .top)
+                            .padding(.leading, 15)
+                        ScrollView {
+                            ForEach(Array(appDefaults.savedRates.rates.keys.enumerated()), id: \.element) { index, key in
+                                if let value = appDefaults.savedRates.rates[key] {
+                                    CapsuleViewCell(viewModel: .init(value: value, tag: key, longTouchAction: {
+                                        appDefaults.favouriteRates.updateValue(value, forKey: key)
+                                        appDefaults.updateFavouriteRates()
+                                    }, isFavourite: false, rate: appDefaults.ratesUpdates, selectedRateBinding: $selectedRate))
+                                    .frame(height: geometry.size.height/7)
+                                    .padding(.trailing, 10)
+                                }
                             }
                         }
+                        .padding(.horizontal, 5)
                         .scrollIndicators(.hidden)
                     }
-                })
+                }
                 .padding(.top, 5)
                 .padding(.leading, 5)
-                
-            }}
+                .animation(.easeInOut(duration: 0.5), value: isExpanded)
+            }
+        }
     }
-}
-
-#Preview {
-    HomePageView()
 }

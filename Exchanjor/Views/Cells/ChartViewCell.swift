@@ -9,25 +9,35 @@ import SwiftUI
 import Charts
 
 struct ChartViewCell: View {
-    let data = [1, 5, 20, 4, 33, 7, 2, 12, 5, 30, 45, 2, 3, 4, 8]
+    @Binding private var selectedRate: String
+    @ObservedObject private var appDefaults = AppDefaults.shared
+    @State private var rate: Bool = false
+    var historicalData: [Double] {
+        var rtn: [Double] = []
+        let history = appDefaults.getRatesHistory()
+        history.forEach{(entry) in
+            guard let historicalRate = entry.rates[selectedRate] else {return}
+            rtn.append(historicalRate)
+        }
+        return rtn
+    }
+    
+    init(selectedRate: Binding<String>) {
+        self._selectedRate = selectedRate
+    }
     
     var body: some View {
         GeometryReader{ geometry in
             ZStack(alignment: .bottomLeading) {
-                //                Color(Color.mainBackgroundColor)
-                //                    .frame(width: geometry.size.width ,height: geometry.size.height, alignment: .top)
-                //                    .cornerRadius(10)
-                //                    .padding(.trailing, 15)
-                //                    .zIndex(-1)
                 Chart {
-                    ForEach(Array(data.enumerated()), id: \.offset) { index, value in
+                    ForEach(Array(historicalData.enumerated()), id: \.offset) { index, value in
                         AreaMark(
                             x: .value("Index", index),
                             y: .value("Value", value)
                         )
                         .foregroundStyle(
                             LinearGradient(
-                                gradient: Gradient(colors: [Color.green.opacity(0.6), Color.green.opacity(0.1)]),
+                                gradient: Gradient(colors: [returnAccentColor().opacity(0.6), returnAccentColor().opacity(0.1)]),
                                 startPoint: .top,
                                 endPoint: .bottom
                             )
@@ -37,7 +47,7 @@ struct ChartViewCell: View {
                             y: .value("Value", value)
                         )
                         .foregroundStyle(
-                            Color(.green)
+                            Color(returnAccentColor())
                         )
                     }
                 }
@@ -66,9 +76,16 @@ struct ChartViewCell: View {
             }
         }
     }
+    
+    private func returnAccentColor() -> Color {
+        return appDefaults.ratesUpdates[selectedRate] ?? false ? .red : .green
+    }
 }
 
-#Preview {
-    ChartViewCell()
-        .frame(width: 300, height: 300)
-}
+//#Preview {
+//    ZStack{
+//        Color(.black)
+//        ChartViewCell()
+//            .frame(width: 300, height: 300)
+//    }
+//}
