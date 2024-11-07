@@ -2,10 +2,10 @@ Exchanjor -> Exhange + Ninjor (the best ninja ever :D)
 
 *Objectives of the Project*
 
-  * To create the MVP (Minimal Viable Product) of an app that would fetch the current USD exchange rate from 'coinlayer.com' and display those rates.
-  * The capabilitie of adding and removing favourites rates, so you can easily find what you're looking for.
-  * Be able to see the last fetched rates even if you don't have internet at the time of launching the app.
-  * Fast and simple UI, so you can easily identify what's happening in the new fetched rates.
+   * To create the MVP (Minimal Viable Product) of an app that would fetch the current USD exchange rate from 'coinlayer.com' and display those rates.
+   * The capabilitie of adding and removing favourites rates, so you can easily find what you're looking for.
+   * Be able to see the last fetched rates even if you don't have internet at the time of launching the app.
+   * Fast and simple UI, so you can easily identify what's happening in the new fetched rates.
 
 *App architecture (and some design choices)*
 
@@ -17,9 +17,9 @@ Exchanjor -> Exhange + Ninjor (the best ninja ever :D)
     * Design-wise the app aimed for a simple, yet moder look, trying to keep things simple but also elegant, withouth fuzz.
 
 
-      *Components: *
+      *Components:*
    
-      UI COMPONENTS*
+      *UI COMPONENTS*
 
         * HomePageView: The HomePageView can also be viewed has a main HUB, where i've agregated all the other views to it. Keeping things simple and yet functional, aiming to have a good readability of the code. Other than that, the homeScreen does not have anything else special, it's rather simple by design.
   
@@ -31,7 +31,7 @@ Exchanjor -> Exhange + Ninjor (the best ninja ever :D)
   
         * FavouritesView: Similar to the HomePageView, the FavouritesView only agregates two components together. The list of CapsuleViewCell and a Header Text. Technically speeaking, it's nothing else than an agreegator view. By choosing the viewCells aproach we don't need to give it much tought. Wich is great for readability and maintainability of the codebase.
    
-       *OFFLINE SYSTEM COMPONENTS: *
+       *OFFLINE SYSTEM COMPONENTS:*
         
         * AppDefaults: The AppDefaults Class was made to agreegate all the logic for fetching and storing the API data. Since I've aimed for a MVP, the appDefauts approach was the clear choice since I did not wanted to overengineer this product to make sure I've delivered withing the time frame. In a latter aproach the best would be to update the code to use coreData instead of appDefaults, since they provide a better connection between the saved data and alowing us to save more than just the last fetch easily. So the charts data can be more accurate and usefull.
           
