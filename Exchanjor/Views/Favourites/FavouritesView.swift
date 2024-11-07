@@ -36,7 +36,7 @@ struct FavouritesView: View {
                 .padding(.horizontal, 5)
                 .scrollIndicators(.hidden)
             }
-            .padding(.top, 10) // To add some top padding for the title
+            .padding(.top, 10)
         }
     }
 }

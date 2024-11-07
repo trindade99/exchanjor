@@ -65,6 +65,7 @@ struct CapsuleViewCell: View {
             .cornerRadius(15)
             .padding(5)
             .contextMenu {
+                //ideally this would be also an external element configured by the viewModel
                 if(!viewModel.isFavourite) {
                     Button(action: {
                         viewModel.longTouchAction()
