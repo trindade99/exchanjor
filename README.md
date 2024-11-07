@@ -41,3 +41,8 @@ Exchanjor -> Exhange + Ninjor (the best ninja ever :D)
                       The "API_KEY" is stored into the configuration file to be segured, we fetch it from the info.plist. Making possible to have two different keys, for different environment.
 
         * MockData: It's a file with some mock data that was used for development purpose, it's also still in use just has a fallback in case everything fails, we will still be able to display something for the user, keeping the app more responsive.
+
+
+    *UNIT TESTING*
+
+      * Two tests where added to the app, under 'ExchanjorTests', those being 'testFetchFromAPINotNilOrError' and 'testAppDefaultsNotLoadingMockData'. Both to ensure our API calls and appDefaults loads are not falling or going to fallback mock data respectively.
