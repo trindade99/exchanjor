@@ -20,5 +20,93 @@
             landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EF8BA8A1-13C9-420A-8467-34EA36CC17AD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Exchanjor/Services/APIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "fetchCoinLayerData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EF8BA8A1-13C9-420A-8467-34EA36CC17AD - 446906386c05735d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Exchanjor.APIService.fetchCoinLayerData() async throws -&gt; Foundation.Data"
+                  moduleName = "Exchanjor.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/victorlopes/IosProjects/Exchanjor/Exchanjor/Services/APIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21">
+               </Location>
+               <Location
+                  uuid = "EF8BA8A1-13C9-420A-8467-34EA36CC17AD - d71670d79b97d0bc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for Exchanjor.APIService.fetchCoinLayerData() async throws -&gt; Foundation.Data"
+                  moduleName = "Exchanjor.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/victorlopes/IosProjects/Exchanjor/Exchanjor/Services/APIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21">
+               </Location>
+               <Location
+                  uuid = "EF8BA8A1-13C9-420A-8467-34EA36CC17AD - a5f956a95a38375b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Exchanjor.APIService.fetchCoinLayerData() async throws -&gt; Foundation.Data"
+                  moduleName = "Exchanjor.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/victorlopes/IosProjects/Exchanjor/Exchanjor/Services/APIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21">
+               </Location>
+               <Location
+                  uuid = "EF8BA8A1-13C9-420A-8467-34EA36CC17AD - 95417ee131459e12"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Exchanjor.APIService.fetchCoinLayerData() async throws -&gt; Foundation.Data"
+                  moduleName = "Exchanjor.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/victorlopes/IosProjects/Exchanjor/Exchanjor/Services/APIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15">
+               </Location>
+               <Location
+                  uuid = "EF8BA8A1-13C9-420A-8467-34EA36CC17AD - 95417ee131459958"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Exchanjor.APIService.fetchCoinLayerData() async throws -&gt; Foundation.Data"
+                  moduleName = "Exchanjor.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/victorlopes/IosProjects/Exchanjor/Exchanjor/Services/APIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
