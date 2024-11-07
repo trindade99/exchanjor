@@ -10,6 +10,7 @@ Exchanjor -> Exhange + Ninjor (the best ninja ever :D)
 *App architecture (and some design choices)*
 
   * I've aimed to create a MVP, therefore, some choices were made souly with this in mind. But some improvement room was left behind for a future re-iteration over this project
+         * To add a rate to the favourite list just long press on it! The same for removing! (I do have a small visual bug because of the size of the list the API respond back, in the future we need to load/unload the list along with the scrool of the scrollView to keep the animation smooth, since the app is resizing hundreds of cells all at once at the moment.)  
 
     *Architecture*
 
