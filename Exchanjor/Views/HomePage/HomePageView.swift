@@ -26,7 +26,7 @@ struct HomePageView: View {
                 .zIndex(-1)
                 HStack(alignment: .top) {
                     if isExpanded {
-                        FavouritesView(appDefaults: appDefaults, selectedRateBinding: $selectedRate)
+                        FavouritesView(viewModel: .init(appDefaults: appDefaults, selectedRateBinding: $selectedRate))
                             .frame(width: geometry.size.width * 0.3, height: geometry.size.height)
                             .transition(.move(edge: .leading))
                             .zIndex(1)

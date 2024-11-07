@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct FavouritesView: View {
-    @ObservedObject var appDefaults: AppDefaults
-    @Binding var selectedRateBinding: String
+    @ObservedObject var viewModel: FavouritesViewModel
     
     var body: some View {
         // Using GeometryReader size to keep the app fully responsive
@@ -25,12 +24,9 @@ struct FavouritesView: View {
                     .padding(.leading, 10)
                 
                 ScrollView {
-                    ForEach(Array(appDefaults.favouriteRates.keys.enumerated()), id: \.element) { index, key in
-                        if let value = appDefaults.favouriteRates[key] {
-                            CapsuleViewCell(viewModel: .init(value: value, tag: key, longTouchAction: {
-                                appDefaults.favouriteRates.removeValue(forKey: key)
-                                appDefaults.updateFavouriteRates()
-                            }, isFavourite: true, rate: appDefaults.ratesUpdates, selectedRateBinding: $selectedRateBinding))
+                    ForEach(Array(viewModel.appDefaults.favouriteRates.keys.enumerated()), id: \.element) { index, key in
+                        if let value = viewModel.appDefaults.favouriteRates[key] {
+                            CapsuleViewCell(viewModel: viewModel.generateCapsuleViewModel(value: value, key: key))
                             .frame(width: geometry.size.width - 20, height: geometry.size.height * 0.125)
                             .padding(.horizontal, 10)
                             .padding(.vertical, 5)
