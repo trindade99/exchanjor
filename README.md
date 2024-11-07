@@ -15,6 +15,7 @@ Exchanjor -> Exhange + Ninjor (the best ninja ever :D)
 
     * The app is build following the MVVM Architecture. Since it's considered one of the best architectures at the moment.
     * Design-wise the app aimed for a simple, yet moder look, trying to keep things simple but also elegant, withouth fuzz.
+    * I've also used Geometry Reader in everything, so the UI is 100% compatible with IPadOs and MacOS, since it will always keep the original proportions.
 
 
       *Components:*
